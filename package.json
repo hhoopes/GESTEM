@@ -1,0 +1,11 @@
+{
+  "name": "gestem-bot",
+  "version": "1.0.0",
+  "description": "A bot that responds to prompts in a Discord server",
+  "main": "bot.js",
+  "author": "Put your name here",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^3.2.1"
+  }
+}
