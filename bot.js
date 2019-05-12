@@ -1,41 +1,45 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
-// Initialize Discord Bot
-console.log("here!")
-var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
-});
-console.log(bot)
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-});
-bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
+const Eris = require('eris'); 
+const bot = new Eris(process.env.DISCORD_BOT_TOKEN);
 
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'make more cookies!'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
-     }
+
+bot.on('ready', () => {                                                  // When the bot is ready to go
+    console.log("Yeehaw! I'm awake!");
 });
+ 
+bot.on("messageCreate", (message) => { // When a message is created
+    var msg = message.content.toLowerCase();                             // We don't want our user having to worry about capitalization
+    console.log("The message is:", msg);
+    
+  if(msg.includes("hello")) {
+      bot.createMessage(message.channel.id,
+        "world!"
+      )
+    
+  } else if(msg.includes("what transportation options are available")) { // Look for the word pattern that starts one of our user's questions
+    bot.createMessage(message.channel.id,
+      // Add your response in the "" marks
+      ""
+    )
+      
+  } else if(msg.includes("what locations are popular")) {               // look for the pattern for another of our user's questions
+      bot.createMessage(message.channel.id,
+        // Add your response in "" marks
+        ""
+    );
+      
+  } else if(msg.includes("what locations are popular")) {               // look for the pattern for another of our user's questions
+      bot.createMessage(message.channel.id,
+        // Add your response in "" marks
+        ""
+    );
+      
+  } else if(msg.includes("Add your own message you want the bot to look for here!")) {
+      bot.createMessage(message.channel.id,
+        // Add your response in "" marks
+        ""
+    );
+  }
+});
+
+
+bot.connect();                                         // Get the bot to connect to Discord
