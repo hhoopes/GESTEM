@@ -2,7 +2,7 @@
 
 # save work from previous group
 timestamp=$( date +%T )
-mv bot.js other_projects/${timestamp}_bot.js
+mv bot.js saved_projects/${timestamp}_bot.js
 
 # pull fresh, reinit-ing if necessary
 git reset --hard origin/master
