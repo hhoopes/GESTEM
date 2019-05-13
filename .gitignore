@@ -1,1 +1,4 @@
 node_modules/
+other_projects/
+
+!other_projects/.keep
