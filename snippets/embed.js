@@ -6,7 +6,7 @@ bot.createMessage(message.channel.id, {
       name: message.author.username,
       icon_url: message.author.avatarURL
     },
-    color: 0xcde4e6, // Color of the bar on the side, you can find these numbers at https://www.color-hex.com/
+    color: 0xcde4e6, // Color of the bar, you can find these numbers at https://www.color-hex.com/, but keep the '0x'
     fields: [ // Little text boxes that will go across the screen
       {
         name: "Some extra info.", // Field title
