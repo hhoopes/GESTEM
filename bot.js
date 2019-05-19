@@ -36,7 +36,7 @@ bot.on("messageCreate", (message) => {                                 // When a
         ""
       )
       
-    } else if(msg.includes("")) {
+    } else if(msg.includes("Some other message")) {
       bot.createMessage(message.channel.id,
         // Add your response in the "" marks
         ""
