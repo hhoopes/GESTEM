@@ -23,6 +23,4 @@ bot.createMessage(msg.channel.id, {
                     text: "Created with Eris."
                 }
             }
-        });
-    }
-});
+        })
