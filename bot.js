@@ -12,31 +12,31 @@ bot.on("messageCreate", (message) => {                                 // When a
     console.log("The message is:", msg);
     
     // Look for the message "hello"
-    if(msg.includes("hello")) {                                     
+    if(msg.includes("hello".toLowerCase())) {                                     
       bot.createMessage(message.channel.id,   
         "world!"
       )
       
     // Look for the word pattern that starts one of our user's questions
-    } else if(msg.includes("Question 1!")) {
+    } else if(msg.includes("Question 1!".toLowerCase())) {
       bot.createMessage(message.channel.id,
         // Add your response in the "" marks
         ""
       )
       
-    } else if(msg.includes("Question 2!")) {
+    } else if(msg.includes("Question 2!".toLowerCase())) {
       bot.createMessage(message.channel.id,
         // Add your response in the "" marks
         ""
       )
       
-    } else if(msg.includes("Question 3!")) {                        
+    } else if(msg.includes("Question 3!".toLowerCase())) {                        
       bot.createMessage(message.channel.id,
         // Add your response in the "" marks
         ""
       )
       
-    } else if(msg.includes("Some other message")) {
+    } else if(msg.includes("Some other message".toLowerCase())) {
       bot.createMessage(message.channel.id,
         // Add your response in the "" marks
         ""
