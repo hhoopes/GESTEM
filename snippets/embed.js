@@ -1,3 +1,5 @@
+// Copy and paste this into your code instead of your normal message creation to add a fancy card
+
 bot.createMessage(message.channel.id, {
   embed: {
     title: "I have an answer for your question!", // Title of the embed
